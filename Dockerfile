@@ -18,6 +18,6 @@ FROM debian:bullseye-slim
 WORKDIR /app
 
 COPY --from=build /app/bot .
-COPY .env .env
+# COPY .env .env
 
 CMD ["./bot"]
