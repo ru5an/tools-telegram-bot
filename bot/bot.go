@@ -8,8 +8,6 @@ import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
-var UserStates = new(map[int64]*state.UserState)
-
 func Start(cfg *config.Config, userStates map[int64]*state.UserState) error {
 	bot, err := tgbotapi.NewBotAPI(cfg.BotToken)
 	if err != nil {
