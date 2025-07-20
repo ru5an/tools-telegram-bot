@@ -10,14 +10,14 @@ RUN go mod download
 
 COPY . ./
 
-RUN go build -o bot .
+RUN go build -o ./main main.go
 
 # ---- RUNTIME ----
 FROM debian:bullseye-slim
 
 WORKDIR /app
 
-COPY --from=build /app/bot .
+COPY --from=builder /app/main ./main
 # COPY .env .env
 
-CMD ["./bot"]
+CMD ["./main"]
